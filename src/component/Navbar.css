@@ -1,0 +1,113 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    width: 100%;
+    padding: 22px 7.2%;
+    background: #f7f8f6;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: #172521;
+    text-decoration: none;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 12px;
+    background: #0c735d;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 750;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: #9ce5a9;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.brand-name span {
+    color: #0c735d;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #59635f;
+    font-size: 13px;
+    font-weight: 550;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: #0c735d;
+}
+
+.nav-cta {
+    padding: 12px 17px;
+    border: 1px solid #d5ded9;
+    border-radius: 6px;
+    color: #172521;
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-cta span {
+    margin-left: 9px;
+    color: #0c735d;
+}
+
+.nav-cta:hover {
+    border-color: #0c735d;
+    background: #eaf3ed;
+}
+
+@media (max-width: 720px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 17px 6%;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .nav-links {
+        justify-content: space-between;
+        gap: 20px;
+        min-width: max-content;
+        padding: 4px 0;
+    }
+
+    .nav-cta {
+        margin-left: auto;
+    }
+}
