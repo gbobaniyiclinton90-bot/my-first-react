@@ -1,5 +1,5 @@
 
-import Button from '../Utils/Button';
+// import Button from '../Utils/Button';
 import './Navbar.css';
 
 function Navbar() {
@@ -20,9 +20,9 @@ function Navbar() {
             </nav>
 
             <a className="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
-            <Button ht= '40px' wt = '150px' bg = {"#007bff"} color = {"white"} text = {"Get in Touch"}/>
+            {/* <Button ht= '40px' wt = '150px' bg = {"#007bff"} color = {"white"} text = {"Get in Touch"}/>
             <Button ht='40px' wt = '150px' bg = {"#007bff"} color = {"white"} text = 'your problem'/>
-            <Button  isBorder text = 'Blue'/>
+            <Button  isBorder text = 'Blue'/> */}
         </header>
     );
 }

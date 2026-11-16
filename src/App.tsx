@@ -1,17 +1,60 @@
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import "./App.css";
+import ProfileCard from "./Utils/profilecard";
+import Button from "./Utils/Button";
 
 
 function App() {
    
   const name = 'Clinton'
 
+  type peopleprops = {
+    id: number,
+    name: String,
+    role: String,
+    location: String,
+  }
+
+  const people:peopleprops[] = [
+    {
+      id: 1,
+      name: 'Ayoola',
+      role: 'software Engineer',
+      location: 'osogbo'
+    },
+    {
+      id: 2,
+      name: 'qodri',
+      role: 'software developer',
+      location: 'Ilobu'
+    },
+    {
+      id: 3,
+      name: 'clinton',
+      role: 'Mobile app developer',
+      location: 'Kobo'
+    },
+    {
+      id: 4,
+      name: 'David',
+      role: 'Technical officer',
+      location: 'Owode'
+    }, 
+  ]
+
   return (
     <div className="site-shell">
       <Navbar />
-      
-
+       <div>
+        <ProfileCard 
+          name="John Doe" 
+          role="Software Engineer" 
+         imageUrl="https://via.placeholder.com/150" 
+         location="New York, USA" /> 
+         <Button text= "follow me"/>
+          </div>
+        
       <main>
         <section className="hero" id="home">
           <div className="hero-copy">

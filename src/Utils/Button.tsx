@@ -8,7 +8,7 @@ type ButtonProps = {
   text?: string;
   isBorder?: boolean
 };
-const Button = ({ht = ' 40px', wt = ' 70px', bg, color, text, isBorder}: ButtonProps) => {
+const Button = ({ht = ' 40px', wt = ' 70px', bg= 'red', color, text, isBorder}: ButtonProps) => {
   return (
     <button style={{ 
         height: ht, 
