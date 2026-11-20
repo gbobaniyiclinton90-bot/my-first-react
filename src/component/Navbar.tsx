@@ -1,5 +1,5 @@
 
-// import Button from '../Utils/Button';
+import Button from '../Utils/Button';
 import './Navbar.css';
 
 function Navbar() {

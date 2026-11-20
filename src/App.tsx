@@ -1,59 +1,144 @@
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import "./App.css";
-import ProfileCard from "./Utils/profilecard";
-import Button from "./Utils/Button";
+import PlayerCard from "./Utils/Playercard";
+// import ProfileCard from "./Utils/profilecard";
 
+type  status = "pending" | "approved" | "rejected"
+
+function setstatus(status: status){
+  console.log(`status set to: ${status}`)
+}
+setstatus("approved")
 
 function App() {
    
   const name = 'Clinton'
 
-  type peopleprops = {
-    id: number,
-    name: String,
-    role: String,
-    location: String,
+  // type peopleprops = {
+  //   id: number,
+  //   name: String,
+  //   role: String,
+  //   location: String,
+  // }
+
+  // const people:peopleprops[] = [
+  //   {
+  //     id: 1,
+  //     name: 'Ayoola',
+  //     role: 'software Engineer',
+  //     location: 'osogbo'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'qodri',
+  //     role: 'software developer',
+  //     location: 'Ilobu'
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'clinton',
+  //     role: 'Mobile app developer',
+  //     location: 'Kobo'
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'David',
+  //     role: 'Technical officer',
+  //     location: 'Owode'
+  //   }, 
+  // ]
+
+  
+  type Playerinfo = {
+    jersey : number,
+    name: string,
+    imgurl: string,
+    position: string,
+    country: string,
   }
 
-  const people:peopleprops[] = [
+  const player :Playerinfo[] = [
     {
-      id: 1,
-      name: 'Ayoola',
-      role: 'software Engineer',
-      location: 'osogbo'
+      jersey: 7,
+      name: 'christiano ronaldo',
+      position: 'forward',
+      imgurl: 'https://i.pinimg.com/1200x/18/60/67/186067c3c81040a68a049b9344b9f995.jpg',
+      country: 'Portugal'
     },
     {
-      id: 2,
-      name: 'qodri',
-      role: 'software developer',
-      location: 'Ilobu'
+      jersey: 10,
+      name: 'messi',
+      position: 'L wing forward',
+      imgurl: 'https://www.vedantu.com/seo/content-images/a2de1c30-d35c-40f2-8bbf-1c8905273394_compressed_2.jpg',
+      country: 'Argentina'
     },
     {
-      id: 3,
-      name: 'clinton',
-      role: 'Mobile app developer',
-      location: 'Kobo'
+      jersey: 10,
+      name: 'neymar',
+      position: 'right wing forward',
+      imgurl: 'https://images.ctfassets.net/3mv54pzvptwz/5eTv6hTyA1pqkFClYRn0qt/be626a573cbf1ee7e421b73f87ed6851/20221205_foto_GETTY_neymar_jr_jogo_brasil_x_coreia_copa_do_mundo__209_.jpg',
+      country: 'Brazil'
     },
     {
-      id: 4,
-      name: 'David',
-      role: 'Technical officer',
-      location: 'Owode'
-    }, 
+      jersey: 10,
+      name: 'mbappe',
+      position: ' Central forward',
+      imgurl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEXXWPubcuGC1P-qB49klHKYWS0tlW_MgP73O35FBWO-qhYzBbITkf9FCk&s=10',
+      country: 'France'
+    },
   ]
 
-  return (
-    <div className="site-shell">
+
+  return ( 
+
+    <div className="site-shell" >
+      {/* {
+         people.map((person)=>(
+          <ProfileCard key={person.id}
+            id={person.id}
+            name= {person.name}
+            role={person.role}
+            location={person.location}
+            
+          />
+         ))
+      } */}
+
+        
+    <div className="min-h-screen bg-gray-100 p-8">
+
+        <h1 className="text-3xl font-bold text-center mb-8">
+            Football Players
+        </h1>
+
+        <div className="flex flex-wrap justify-center gap-6">
+
+            {player.map((p) => (
+                <PlayerCard
+                    key={`${p.name}-${p.jersey}`}
+                    jersey={p.jersey}
+                    name={p.name}
+                    imgurl={p.imgurl}
+                    position={p.position}
+                    country={p.country}
+                />
+            ))}
+
+        </div>
+
+    </div>
+
+
       <Navbar />
-       <div>
+       {/* <div>
         <ProfileCard 
           name="John Doe" 
           role="Software Engineer" 
          imageUrl="https://via.placeholder.com/150" 
          location="New York, USA" /> 
          <Button text= "follow me"/>
-          </div>
+          </div> */}
         
       <main>
         <section className="hero" id="home">
