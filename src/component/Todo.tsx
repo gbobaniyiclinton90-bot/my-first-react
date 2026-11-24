@@ -9,7 +9,19 @@ type TodoProps = {
 const Todo = () => {
    const [inputValue,setInputvalue] = useState('')
 
-   const [todos,setTodos] = useState<TOdoProps[]>([])
+   const [todos,setTodos] = useState<TodoProps[]>([])
+
+   const addTodo=() => {
+    if(inputValue.trim() !== ''){
+        const newTodo: TodoProps = {
+            id: Date.now(),
+            text: inputValue,
+        }
+        setTodos([...todos,newTodo])
+        setInputvalue('')
+    }
+
+}
 
   return (
     <div>
@@ -19,7 +31,7 @@ const Todo = () => {
        value={inputValue}
        onChange={(e)=>setInputvalue(e.target.value)}
       />
-      <button> addTodo</button>
+      <button onClick={addTodo}> addTodo</button>
     </div>
   )
 }
