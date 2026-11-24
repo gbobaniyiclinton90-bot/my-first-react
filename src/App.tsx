@@ -2,6 +2,7 @@ import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import "./App.css";
 import PlayerCard from "./Utils/Playercard";
+import Counter from "./component/counter";
 // import ProfileCard from "./Utils/profilecard";
 
 type  status = "pending" | "approved" | "rejected"
@@ -105,6 +106,8 @@ function App() {
          ))
       } */}
 
+     
+
         
     <div className="min-h-screen bg-gray-100 p-8">
 
@@ -127,10 +130,12 @@ function App() {
 
         </div>
 
-    </div>
+         </div>
 
+           <Counter/>
 
       <Navbar />
+
        {/* <div>
         <ProfileCard 
           name="John Doe" 
@@ -181,7 +186,6 @@ function App() {
             </div>
             <p>Explore the skills that help people and businesses move forward in a digital world.</p>
           </div>
-
           <div className="program-grid">
             <article className="program-card">
               <span className="program-number">01 / DIGITAL SKILLS</span>
