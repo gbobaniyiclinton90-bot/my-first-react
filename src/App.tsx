@@ -2,7 +2,7 @@ import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import "./App.css";
 import PlayerCard from "./Utils/Playercard";
-import Counter from "./component/counter";
+import Counter from "./component/Counter";
 // import ProfileCard from "./Utils/profilecard";
 
 type  status = "pending" | "approved" | "rejected"
