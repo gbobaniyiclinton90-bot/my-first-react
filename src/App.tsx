@@ -129,10 +129,10 @@ function App() {
             ))}
 
         </div>
-
+            <Counter/>
          </div>
 
-           <Counter/>
+          
 
       <Navbar />
 
