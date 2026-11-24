@@ -3,6 +3,7 @@ import Footer from "./component/Footer";
 import "./App.css";
 import PlayerCard from "./Utils/Playercard";
 import Counter from "./component/Counter";
+import Todo from "./component/Todo";
 // import ProfileCard from "./Utils/profilecard";
 
 type  status = "pending" | "approved" | "rejected"
@@ -130,6 +131,7 @@ function App() {
 
         </div>
             <Counter/>
+            <Todo/>
          </div>
 
           
