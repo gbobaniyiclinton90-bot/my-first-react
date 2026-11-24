@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type TodoProps = {
   id: number;
@@ -8,7 +8,14 @@ type TodoProps = {
 const Todo = () => {
   const [inputValue, setInputvalue] = useState("");
 
-  const [todos, setTodos] = useState<TodoProps[]>([]);
+  const [todos, setTodos] = useState<TodoProps[]>(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? (JSON.parse(savedTodos) as TodoProps[]) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = () => {
     if (inputValue.trim() !== "") {
@@ -16,6 +23,7 @@ const Todo = () => {
         id: Date.now(),
         text: inputValue,
       };
+
       setTodos([...todos, newTodo]);
       setInputvalue("");
     }
@@ -24,16 +32,19 @@ const Todo = () => {
   return (
     <div>
       <h1>Todo App</h1>
+
       <input
         type="text"
         placeholder="Enter Task"
         value={inputValue}
         onChange={(e) => setInputvalue(e.target.value)}
       />
-      <button onClick={addTodo}> addTodo</button>
+
+      <button onClick={addTodo}>Add Todo</button>
+
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.text}</li>
+          <li key={todo.id}> {todo.id}-{todo.text}</li>
         ))}
       </ul>
     </div>
