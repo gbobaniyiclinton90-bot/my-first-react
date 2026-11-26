@@ -29,7 +29,10 @@ const Todo = () => {
     }
   };
 
-  const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+  const deleteTodo = (id: number) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+  };
 
   return (
     <section
@@ -155,6 +158,7 @@ const Todo = () => {
                 <div className="invisible absolute right-0 top-full z-10 mt-1 w-40 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-lg shadow-slate-900/10 transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                   <button
                     type="button"
+                    onClick={() => deleteTodo(todo.id)}
                     className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-rose-600 transition hover:bg-rose-50 focus-visible:bg-rose-50 focus-visible:outline-none"
                   >
                     <svg
