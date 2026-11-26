@@ -29,6 +29,8 @@ const Todo = () => {
     }
   };
 
+  const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+
   return (
     <section
       aria-labelledby="todo-heading"
@@ -128,7 +130,7 @@ const Todo = () => {
                 aria-hidden="true"
                 className="h-5 w-5 shrink-0 rounded-full border-2 border-slate-300"
               />
-              <span className="min-w-0 flex-1 break-words text-sm font-medium text-slate-700">
+              <span className="min-w-0 flex-1  text-sm font-medium text-slate-700">
                 {todo.text}
               </span>
 
